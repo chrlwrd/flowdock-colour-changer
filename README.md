@@ -12,4 +12,4 @@ Once you've added the userscript, reload any open Flowdock windows.
 
 Then you can click on your avatar in the top left which should expose the "Change tab colours" option. Click it, and you're away!
 
-Colour values can be any valid CSS colours (by name, RGB values or hex code) or "default" to use whatever random colour Flowdock sees fit.
+Colour values can be any valid [CSS colours](https://www.w3schools.com/colors/default.asp) or "default" to use whatever random colour Flowdock sees fit.
