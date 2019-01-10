@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Flowdock Colour Changer
-// @version      0.1
+// @version      0.2
 // @description  Change the bloody Flow tab colours.
 // @author       Charlie Ward
 // @match        https://www.flowdock.com/*
@@ -17,7 +17,7 @@
 
     // Get list of flows from tab elements (janky, but unfortunately Flowdock's localStorage variables aren't helpful here)
     var init = function() {
-        var flowTabs = $($(".org-flows")[1]).children();
+        var flowTabs = $(".flow-list").find(".org-flows").children();
         var flows = {};
         $.each(flowTabs, function(i, v) {
             var name = getName(v);
@@ -51,7 +51,11 @@
     // Get name of flow from its tab element
     var getName = function(element) {
         var ele = $(element).children()[0];
-        return ele.title;
+        if (ele.title != "") {
+            return ele.title;
+        } else {
+            return $(ele).find(".tab-name")[0].innerHTML;
+        }
     };
 
     // Get URL of flow from its tab element
@@ -68,7 +72,7 @@
 
     // Trigger colour change
     var changeColours = function() {
-        var elements = $($(".org-flows")[1]).children();
+        var elements = $(".flow-list").find(".org-flows").children();
         $.each(elements, function(i, v){
             var savedColour = GM_config.get(getLink(v));
             if (savedColour != "default") {
