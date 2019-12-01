@@ -1,5 +1,5 @@
 # flowdock-colour-changer
-Simple, janky and inefficient userscript to change the (client-side) colours of Flowdock flow tabs! (WIP)
+Simple, janky and inefficient userscript to change the (client-side) colours of Flowdock flow tabs!
 
 ## Requirements
 - GreaseMonkey or TamperMonkey browser extension (I've only tested with TamperMonkey in Chrome but in theory it should work with GreaseMonkey in Firefox too).
